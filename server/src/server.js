@@ -48,7 +48,7 @@ const PORT = process.env.PORT || 5000;
 app.set("io", io);
 
 io.on("connection", (socket) => {
-  console.log("Client Connected:", socket.id);
+  // console.log("Client Connected:", socket.id);
 
   socket.on("disconnect", () => {
     console.log("Client Disconnected");
