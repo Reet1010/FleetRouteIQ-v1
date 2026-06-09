@@ -121,6 +121,7 @@ Live Map Tracking
 
 ### Backend
 
+```text
 server/
 ├── src/
 │ ├── config/
@@ -131,9 +132,11 @@ server/
 │ ├── services/
 │ ├── sockets/
 │ └── server.js
+```
 
 ### Frontend
 
+```text
 client/
 ├── src/
 │ ├── pages/
@@ -143,6 +146,7 @@ client/
 │ ├── hooks/
 │ ├── services/
 │ └── routes/
+```
 
 ---
 
