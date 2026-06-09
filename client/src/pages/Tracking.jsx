@@ -5,12 +5,9 @@ import { io } from "socket.io-client";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import styles from "../pages/Tracking.module.css";
+import { API_URL } from "../config.js";
 
-
-
-
-const socket = io("http://localhost:5000");
-
+const socket = io(API_URL);
 const roundPushpinIcon = L.divIcon({
     className: "custom-pushpin",
     html: `
