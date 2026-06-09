@@ -17,6 +17,10 @@ The project simulates a logistics intelligence platform similar to modern fleet 
 
 ---
 
+## Live Demo
+
+🔗 [FleetRouteIQ Live Demo(Ctrl + Click to open in a new tab)](https://fleetrouteiq-v1-git-main-reet1010s-projects.vercel.app/)
+
 ## Features
 
 ### Authentication & Security
