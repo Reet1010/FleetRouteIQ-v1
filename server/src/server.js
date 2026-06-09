@@ -18,15 +18,21 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:5173", "https://fleetrouteiq-v1.vercel.app"],
+    origin: true,
+    methods: ["GET", "POST"],
+    credentials: true,
   },
-  credentials: true,
 });
 
 startVehicleTracking(io);
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: true,
+    credentials: true,
+  }),
+);
 app.use("/api/auth", authRoutes);
 app.use("/api/vehicles", vehicleRoutes);
 app.use("/api/dashboard", dashboardRoutes);
