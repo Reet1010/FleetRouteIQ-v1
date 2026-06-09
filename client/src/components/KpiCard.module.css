@@ -1,0 +1,25 @@
+.card {
+  background: white;
+
+  padding: 24px;
+
+  border-radius: 16px;
+
+  box-shadow: var(--shadow);
+
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card h3 {
+  color: var(--muted);
+
+  margin-bottom: 12px;
+}
+
+.card h2 {
+  font-size: 32px;
+}

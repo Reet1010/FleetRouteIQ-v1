@@ -1,0 +1,7 @@
+.resultsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 200px;
+  margin-top: 24px;
+  padding: 10px;
+}

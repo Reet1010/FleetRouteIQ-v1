@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 260px;
+  min-height: 100vh;
+  background: #111827;
+  color: white;
+  padding: 24px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.link {
+  padding: 12px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.link:hover {
+  background: #1f2937;
+}
+
+.content {
+  flex: 1;
+  padding: 32px;
+}
