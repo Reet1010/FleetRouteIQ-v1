@@ -16,40 +16,64 @@ function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        try {
 
-        const res = await api.post("/auth/login", { email, password, });
+            const res = await api.post("/auth/login", { email, password, });
 
-        localStorage.setItem("user", JSON.stringify(res.data));
+            localStorage.setItem("user", JSON.stringify(res.data));
 
-        setUser(res.data);
+            setUser(res.data);
 
-        navigate("/dashboard");
+            navigate("/dashboard");
+
+        } catch (error) {
+            alert(
+                error.response?.data?.message ||
+                "Login failed"
+            );
+        }
     };
 
     return (
-        <form className={styles.form} onSubmit={handleSubmit}>
-            <input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-            />
+        <div>
 
-            <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) =>
-                    setPassword(
-                        e.target.value
-                    )
-                }
-                required
-            />
+            <form className={styles.form} onSubmit={handleSubmit}>
+                <input
+                    type="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                />
 
-            <button>Login</button>
-        </form>
+                <input
+                    type="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) =>
+                        setPassword(
+                            e.target.value
+                        )
+                    }
+                    required
+                />
+
+                <button>Login</button>
+            </form>
+
+            <p>
+                Don't have an account?
+                <button
+                    type="button"
+                    onClick={() =>
+                        navigate("/register")
+                    }
+                >
+                    Register Here
+                </button>
+            </p>
+        </div>
+
     );
 }
 
