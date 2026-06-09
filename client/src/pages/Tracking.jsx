@@ -7,7 +7,6 @@ import "leaflet/dist/leaflet.css";
 import styles from "../pages/Tracking.module.css";
 import { API_URL } from "../config.js";
 
-const socket = io(API_URL);
 const roundPushpinIcon = L.divIcon({
     className: "custom-pushpin",
     html: `
@@ -94,6 +93,8 @@ function Tracking() {
     const [vehicles, setVehicles] = useState({});
 
     useEffect(() => {
+        const socket = io(API_URL);
+
         socket.on("vehicle-location-updated", (data) => {
             setVehicles(
                 (prev) => ({
